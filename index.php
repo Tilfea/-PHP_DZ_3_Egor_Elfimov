@@ -278,8 +278,31 @@ function umn($num3){
 echo umn($num3);
 
 echo "<hr />";
-echo '16. Дана строка с текстом. Напишите функцию определения самого длинного
+echo '16 &#9989. Дана строка с текстом. Напишите функцию определения самого длинного
 слова.' . "<br><br>";
+echo "<div class='form'> <form method='POST'> <input name='str2' type='text' placeholder='Введите слово'> </form>";
+$str2 = $_POST['str2'];
+function maxLen($str2){
+$str2 = str_replace(',', '', $str2);
+$str2 = str_replace('!', '', $str2);
+$str2 = str_replace('.', '', $str2);
+$str2 = str_replace('?', '', $str2);
+$str2 = str_replace('"', '', $str2);
+$str2 = str_replace('\'', '', $str2);
+$arr = explode(" ", $str2);
+$total = 0;
+$max_line = '';
+foreach($arr as $k){
+    if (strlen($k)> $total){
+        $total = strlen($k);
+        $max_line = $k;
+    }
+}
+return $max_line;
+}
+echo maxLen($str2);
+
+
 
 echo "<hr />";
 echo '17. Напишите функцию определения суммарного количества единиц в числах

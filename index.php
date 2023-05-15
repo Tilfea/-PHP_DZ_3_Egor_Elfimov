@@ -224,22 +224,29 @@ if ($tupe == "км/ч"){
 echo car(2, 250, "м/c");
 
 echo "<hr />";
-echo '13. Даны 2 слова, определить можно ли из 1ого слова составить 2ое, при
+echo '13 &#9989. Даны 2 слова, определить можно ли из 1ого слова составить 2ое, при
 условии что каждую букву из строки 1 можно использовать только один раз.' . "<br><br>";
 
-$a = 'may the force be whith you';
-$b = 'maytheforcebewhithyou';
+function force($a, $b){
 if (strlen($a)< strlen($b)){
-    echo "NO";
+    return "NO";
 } else{
     $total;
     for ($i = 0; $i < strlen($b); $i++){
-    if(substr_count($a, $b[$i])){$total++;}
+    if(substr_count($a, $b[$i])){
+        $total++;
+        $a=substr_replace($a,'',$b[$i],1);
+    }
 }
 if ($total == strlen($b)){
-    echo "YES" . $total;
-} else{echo "NO" . $total;};
+    return "YES";
+} else{return "NO";};
 }
+}
+
+$a = 'may the force be with you!';
+$b = 'maytheforcebewithyou!';
+echo force($a, $b);
 
 echo "<hr />";
 echo '14. Палиндромом называют последовательность символов, которая читается

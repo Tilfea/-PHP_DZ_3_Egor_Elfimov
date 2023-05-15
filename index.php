@@ -249,9 +249,21 @@ $b = 'maytheforcebewithyou!';
 echo force($a, $b);
 
 echo "<hr />";
-echo '14. Палиндромом называют последовательность символов, которая читается
+echo '14 &#9989. Палиндромом называют последовательность символов, которая читается
 как слева направо, так и справа налево. Напишите функцию по определению
 палиндрома по переданному параметру.' . "<br><br>";
+
+echo "<div class='form'> <form method='POST'> <input name='rev' type='text' placeholder='Введите слово'> </form>";
+$rev = $_POST['rev'];
+
+function rev($rev){
+    $rev2 = strrev($rev);
+    if ($rev == $rev2){
+        return "Yes";
+    } return "No";
+}
+echo rev($rev);
+
 
 echo "<hr />";
 echo '15. Создание функцию создания таблицы умножения в HTML-документе в

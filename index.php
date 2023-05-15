@@ -266,7 +266,7 @@ echo rev($rev);
 
 
 echo "<hr />";
-echo '15. Создание функцию создания таблицы умножения в HTML-документе в
+echo '15 &#9989. Создание функцию создания таблицы умножения в HTML-документе в
 виде таблицы с использованием соотв. тегов.' . "<br><br>";
 echo "<div class='form'> <form method='POST'> <input name='num3' type='number' placeholder='Введите число для умножения'> </form>";
 $num3 = (int)$_POST['num3'];

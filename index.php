@@ -320,5 +320,21 @@ echo "<hr />";
 echo '18. Напишите функцию, которая разбивает длинную строку тегами <br> так,
 чтобы длина каждой подстроки была не более N символов. Новая подстрока
 не должна начинаться с пробела.' . "<br><br>";
-
+function newRow($row, $num){
+$newStr = '';
+while ($row != ''){
+    if ($row[0] != " "){
+    $newStr .=mb_substr($row, 0, $num);
+    $newStr.='<br>';
+    $row = mb_substr($row, $num);
+} else{
+    $row = mb_substr($row, 1);
+    $newStr .=mb_substr($row, 0, $num);
+    $newStr.='<br>';
+    $row = mb_substr($row, $num);
+}
+}
+return $newStr;
+}
+echo newRow('may the force be with you!', 4);
 echo "<hr />";

@@ -268,6 +268,14 @@ echo rev($rev);
 echo "<hr />";
 echo '15. Создание функцию создания таблицы умножения в HTML-документе в
 виде таблицы с использованием соотв. тегов.' . "<br><br>";
+echo "<div class='form'> <form method='POST'> <input name='num3' type='number' placeholder='Введите число для умножения'> </form>";
+$num3 = (int)$_POST['num3'];
+function umn($num3){
+    for ($i = 1; $i < 11; $i++){
+        echo $num3 . ' * ' . $i . ' = ' . $num3 * $i . '<br>';
+    }
+}
+echo umn($num3);
 
 echo "<hr />";
 echo '16. Дана строка с текстом. Напишите функцию определения самого длинного
